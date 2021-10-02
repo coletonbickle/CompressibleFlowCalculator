@@ -37,6 +37,8 @@ def main():
         print(f"\nM1: {_Normal.m1} M2: {_Normal.m2} p02/01: {_Normal.p02p01}")
         print(f"p2/p1: {_Normal.p2p1} rho2/rho1: {_Normal.r2r1} T2/T1: {_Normal.t2t1}")
 
+    print("Hello World")
+
 
 def fcn(z, n, g):
     # Find out how to Calculate p1/p02
