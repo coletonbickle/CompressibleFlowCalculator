@@ -13,13 +13,20 @@ PMang = "P-M Angle"
 msg = ""
 
 
-def fcn(z, n, g):
+def fcn_comp(z, n, g):
     m = 0
     ang = 0
     p_mang = 0
     pp0 = 0
     rr0 = 0
     tt0 = 0
+    if g <= 1:
+        for i in range(0, 10):
+            x[i] = None
+
+        msg = "Gamma Must be Greater than 1"
+        return x, msg
+
     if z == mch or z == T or z == MA:  # T/T0 between 0 and 1 and MA between 0 and 90
         if z == mch:
             m = n
@@ -28,16 +35,9 @@ def fcn(z, n, g):
             tt0 = n
             m = math.sqrt(((1 / tt0) - 1) * (2 / (g - 1)))
         elif z == T:
-            x[0] = None
-            x[1] = None
-            x[2] = None
-            x[3] = None
-            x[4] = None
-            x[5] = None
-            x[6] = None
-            x[7] = None
-            x[8] = None
-            x[9] = None
+            for i in range(0, 10):
+                x[i] = None
+
             msg = "T/T0 Must be Between 0 and 1"
             # print(msg)
             return x, msg
@@ -60,16 +60,9 @@ def fcn(z, n, g):
             p_mang = p_mang1 - p_mang2
             tt0 = 1 / (1 + ((g - 1) / 2) * m ** 2)
         elif z == MA:
-            x[0] = None
-            x[1] = None
-            x[2] = None
-            x[3] = None
-            x[4] = None
-            x[5] = None
-            x[6] = None
-            x[7] = None
-            x[8] = None
-            x[9] = None
+            for i in range(0, 10):
+                x[i] = None
+
             msg = "Mach Angle Must be Between 0 and 90 Degrees"
             return x, msg
 
@@ -78,16 +71,9 @@ def fcn(z, n, g):
 
     elif z == P or z == rho:  # P/P0 and rho/rho0 Between 0 and 1
         if n <= 0 or n >= 1:
-            x[0] = None
-            x[1] = None
-            x[2] = None
-            x[3] = None
-            x[4] = None
-            x[5] = None
-            x[6] = None
-            x[7] = None
-            x[8] = None
-            x[9] = None
+            for i in range(0, 10):
+                x[i] = None
+
             if z == P:
                 msg = "p/p0 Must be Between 0 and 1"
             else:
@@ -117,28 +103,71 @@ def fcn(z, n, g):
     elif z == PMang:
         p_mang = n
         m = 1
-        if 0 < p_mang < 103:
+        if 0 < p_mang <= 130: #.454076
             while m > 0:
                 temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
                     math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
                 temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
                 temp = temp1 - temp2
                 if temp >= p_mang:
+                    m = m - 1
+                    while m > 0:
+                        temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
+                            math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
+                        temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
+                        temp = temp1 - temp2
+                        if temp >= p_mang:
+                            break
+                        else:
+                            m = m + 0.00001
                     break
                 else:
-                    m = m + 0.00001
+                    m = m + 1
+        elif 130 < p_mang < 130.454076: # 130.454076
+            while m > 0:
+                temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
+                    math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
+                temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
+                temp = temp1 - temp2
+                if temp >= p_mang:
+                    m = m - 10000
+                    while m > 0:
+                        temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
+                            math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
+                        temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
+                        temp = temp1 - temp2
+                        if temp >= p_mang:
+                            m = m - 100
+                            while m > 0:
+                                temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
+                                    math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
+                                temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
+                                temp = temp1 - temp2
+                                if temp >= p_mang:
+                                    m = m - 1
+                                    while m > 0:
+                                        temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
+                                            math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
+                                        temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
+                                        temp = temp1 - temp2
+                                        if temp >= p_mang:
+                                            break
+                                        else:
+                                            m = m + 0.00001
+                                    break
+                                else:
+                                    m = m + 1
+                            break
+                        else:
+                            m = m + 100
+                    break
+                else:
+                    m = m + 10000
         else:
-            x[0] = None
-            x[1] = None
-            x[2] = None
-            x[3] = None
-            x[4] = None
-            x[5] = None
-            x[6] = None
-            x[7] = None
-            x[8] = None
-            x[9] = None
-            msg = "Prandtl-Meyer Angle Must be Between 0 and 103 Degrees"
+            for i in range(0, 10):
+                x[i] = None
+
+            msg = "Prandtl-Meyer Angle Must be Between 0 and 130.454076 Degrees"
             return x, msg
 
         ang = math.degrees(math.asin(1 / m))
@@ -150,16 +179,9 @@ def fcn(z, n, g):
         aast = n
         m = 1
         if n <= 1:
-            x[0] = None
-            x[1] = None
-            x[2] = None
-            x[3] = None
-            x[4] = None
-            x[5] = None
-            x[6] = None
-            x[7] = None
-            x[8] = None
-            x[9] = None
+            for i in range(0, 10):
+                x[i] = None
+
             msg = "A/A* Must be Greater than 1"
             return x, msg
 

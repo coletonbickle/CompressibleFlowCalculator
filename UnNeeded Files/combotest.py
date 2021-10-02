@@ -1,6 +1,6 @@
 from tkinter import *
 # from main import *
-from Isentropic import *
+from Isentropic_old import *
 # import numpy as np
 
 

@@ -1,4 +1,4 @@
-from Isentropic import *
+from Isentropic_old import *
 import numpy as np
 
 print('\nTypes to Choose From: Mach Number, T/T0, p/p0, rho/rho0, A/A* (sub), A/A* (sup), Mach Angle, P-M Angle')

@@ -1,6 +1,6 @@
 from tkinter import *
 from Isentropic import *
-from NormalShock import *
+# from NormalShock import *
 
 
 class GUI:
@@ -38,7 +38,7 @@ class GUI:
 
         self.errorMsg = Label(master, text="Error: ").grid(row=9, sticky=E)
         self.msg = StringVar()
-        self.error = Entry(master, textvariable=self.msg, width=52)
+        self.error = Entry(master, textvariable=self.msg, width=57)
         self.error.grid(row=9, column=1, columnspan=5, sticky=W)
         self.error.configure(state="readonly")
 
@@ -147,7 +147,7 @@ class GUI:
         z = compress.variable.get()
         n = float(compress.entry_3.get())
         g = float(compress.entry_2.get())
-        x, msg = fcn(z, n, g)
+        x, msg = fcn_comp(z, n, g)
         compress.clear_text()
         compress.a.insert(0, f"{x[0]:.5f}")
         compress.a.configure(state="readonly")
