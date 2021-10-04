@@ -1,19 +1,17 @@
 import numpy as np
 import math as math
 
-x = np.array(np.zeros(10))
-mch = "Mach Number"
-T = "T/T0"
-P = "p/p0"
-rho = "rho/rho0"
-Asub = "A/A* (sub)"
-Asup = "A/A* (sup)"
-MA = "Mach Angle"
-PMang = "P-M Angle"
-msg = ""
-
 
 def fcn_comp(z, n, g):
+    x = np.array(np.zeros(10))
+    mch = "Mach Number"
+    T = "T/T0"
+    P = "p/p0"
+    rho = "rho/rho0"
+    Asub = "A/A* (sub)"
+    Asup = "A/A* (sup)"
+    MA = "Mach Angle"
+    PMang = "P-M Angle"
     m = 0
     ang = 0
     p_mang = 0
@@ -103,66 +101,20 @@ def fcn_comp(z, n, g):
     elif z == PMang:
         p_mang = n
         m = 1
-        if 0 < p_mang <= 130: #.454076
+        if 0 < p_mang < 130.454076:  # 130.454076
+            increment = 10000
             while m > 0:
                 temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
                     math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
                 temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
                 temp = temp1 - temp2
                 if temp >= p_mang:
-                    m = m - 1
-                    while m > 0:
-                        temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
-                            math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
-                        temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
-                        temp = temp1 - temp2
-                        if temp >= p_mang:
-                            break
-                        else:
-                            m = m + 0.00001
-                    break
+                    m = m - increment
+                    increment = increment/10
+                    if increment < 0.000001:
+                        break
                 else:
-                    m = m + 1
-        elif 130 < p_mang < 130.454076: # 130.454076
-            while m > 0:
-                temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
-                    math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
-                temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
-                temp = temp1 - temp2
-                if temp >= p_mang:
-                    m = m - 10000
-                    while m > 0:
-                        temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
-                            math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
-                        temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
-                        temp = temp1 - temp2
-                        if temp >= p_mang:
-                            m = m - 100
-                            while m > 0:
-                                temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
-                                    math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
-                                temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
-                                temp = temp1 - temp2
-                                if temp >= p_mang:
-                                    m = m - 1
-                                    while m > 0:
-                                        temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
-                                            math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
-                                        temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
-                                        temp = temp1 - temp2
-                                        if temp >= p_mang:
-                                            break
-                                        else:
-                                            m = m + 0.00001
-                                    break
-                                else:
-                                    m = m + 1
-                            break
-                        else:
-                            m = m + 100
-                    break
-                else:
-                    m = m + 10000
+                    m = m + increment
         else:
             for i in range(0, 10):
                 x[i] = None
