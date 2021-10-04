@@ -103,27 +103,27 @@ def fcn_comp(z, n, g):
     elif z == PMang:
         p_mang = n
         m = 1
-        if 0 < p_mang <= 130: #.454076
-            while m > 0:
-                temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
-                    math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
-                temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
-                temp = temp1 - temp2
-                if temp >= p_mang:
-                    m = m - 1
-                    while m > 0:
-                        temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
-                            math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
-                        temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
-                        temp = temp1 - temp2
-                        if temp >= p_mang:
-                            break
-                        else:
-                            m = m + 0.00001
-                    break
-                else:
-                    m = m + 1
-        elif 130 < p_mang < 130.454076: # 130.454076
+        # if 0 < p_mang <= 130: #.454076
+        #     while m > 0:
+        #         temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
+        #             math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
+        #         temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
+        #         temp = temp1 - temp2
+        #         if temp >= p_mang:
+        #             m = m - 1
+        #             while m > 0:
+        #                 temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
+        #                     math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
+        #                 temp2 = math.degrees(math.atan(math.sqrt(m ** 2 - 1)))
+        #                 temp = temp1 - temp2
+        #                 if temp >= p_mang:
+        #                     break
+        #                 else:
+        #                     m = m + 0.00001
+        #             break
+        #         else:
+        #             m = m + 1
+        if 0 < p_mang < 130.454076:  # 130.454076
             increment = 10000
             while m > 0:
                 temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
@@ -133,7 +133,7 @@ def fcn_comp(z, n, g):
                 if temp >= p_mang:
                     m = m - increment
                     increment = increment/10
-                    if increment < 0.00000001:
+                    if increment < 0.000001:
                         break
                 else:
                     m = m + increment
