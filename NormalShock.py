@@ -22,7 +22,7 @@ def main():
     h = "t2/t1"
     k = 1
 
-    while k == 1:
+    while k == 1:  # Evaluates User Input
         print("Please input any of the following: M1, M2, p02/p01, p2/p1, rho2/rho1, t2/t1\n")
         z = input("Enter input: ").lower()
         n = float(input("Enter Value: "))
