@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="I further optimized backwards calculations. Now calculates all backward calculates to the correct values in a faster time interval as well as in less lines of code." />
+    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Changing Local File Location">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/CompressibleFlow.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/CompressibleFlowCalculator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/NormalShock.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompressibleFlow.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnNeeded Files/GUItest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnNeeded Files/combotest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnNeeded Files/functions_Old.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnNeeded Files/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnNeeded Files/maintest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnNeeded Files/outputtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompressibleFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompressibleFlow.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +37,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UpdatedWhileLoop.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.NormalShock">
+  <component name="RunManager" selected="Python.CompressibleFlow">
     <configuration name="CompressibleFlow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CompressibleFlow" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,8 +181,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.NormalShock" />
         <item itemvalue="Python.CompressibleFlow" />
+        <item itemvalue="Python.NormalShock" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633370697337</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changing Local File Location">
+      <created>1633371528259</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1633371528259</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,11 +243,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Further Optimized backwards calculations" />
     <MESSAGE value="I further optimized backwards calculations to calculate P-M Angle. Now calculates correct values in a faster time interval as well as in less lines of code." />
     <MESSAGE value="I further optimized backwards calculations. Now calculates all backward calculates to the correct values in a faster time interval as well as in less lines of code." />
-    <option name="LAST_COMMIT_MESSAGE" value="I further optimized backwards calculations. Now calculates all backward calculates to the correct values in a faster time interval as well as in less lines of code." />
+    <MESSAGE value="Changing Local File Location" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing Local File Location" />
   </component>
 </project>
