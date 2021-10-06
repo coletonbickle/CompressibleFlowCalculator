@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Changing Local File Location">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/CompressibleFlow.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/CompressibleFlowCalculator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/NormalShock.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CompressibleFlow.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnNeeded Files/GUItest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnNeeded Files/combotest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnNeeded Files/functions_Old.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnNeeded Files/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnNeeded Files/maintest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnNeeded Files/outputtest.py" afterDir="false" />
+    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Working on GUI to include Normal Shock Relations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompressibleFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompressibleFlow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NormalShock.py" beforeDir="false" afterPath="$PROJECT_DIR$/NormalShock.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633371528259</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Working on GUI to include Normal Shock Relations">
+      <created>1633536111192</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1633536111192</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +242,7 @@
     <MESSAGE value="I further optimized backwards calculations to calculate P-M Angle. Now calculates correct values in a faster time interval as well as in less lines of code." />
     <MESSAGE value="I further optimized backwards calculations. Now calculates all backward calculates to the correct values in a faster time interval as well as in less lines of code." />
     <MESSAGE value="Changing Local File Location" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing Local File Location" />
+    <MESSAGE value="Working on GUI to include Normal Shock Relations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on GUI to include Normal Shock Relations" />
   </component>
 </project>

@@ -1,6 +1,6 @@
 from tkinter import *
 from Isentropic import *
-# from NormalShock import *
+from NormalShock import *
 
 
 class GUI:
@@ -118,17 +118,25 @@ class GUI:
         self.NormalTitle = Label(master, text="Normal Shock Relations", font='Helvetica 12 bold').grid(
             row=10, columnspan=2, sticky=W)
         self.label_2 = Label(master, text="Perfect Gas, Gamma: ").grid(row=11, sticky=W)
-        self.entry_2 = StringVar()
-        self.entry_3 = StringVar()
-        self.entry_2 = Entry(master).grid(row=11, column=1)  # Adds Available entry spot
-        self.entry_3 = Entry(master).grid(row=12, column=1)
-        self.angle = Label(master, text="Angles in Degrees").grid(row=12, column=2, sticky=W)
+        self.entry_2norm = StringVar()
+        self.entry_3norm = StringVar()
+        self.entry_2norm = Entry(master)  # Adds Available entry spot
+        self.entry_3norm = Entry(master)
+        self.angle = Label(master, text="").grid(row=12, column=2, sticky=W)
+
+        self.entry_2norm.insert(END, 1.4)  # Adds Default Entry Value
+        self.entry_3norm.insert(END, 2.0)
+        self.entry_2norm.grid(row=11, column=1)
+        self.entry_3norm.grid(row=12, column=1)
 
         self.variable2 = StringVar(master)
         self.variable2.set("M1")  # default value
         self.Drop2 = OptionMenu(master, self.variable2, "M1", "M2", "p02/p01", "p1/p02", "p2/p1",
                                 "rho2/rho1", "T2/T1")  # Drop Down Menu
         self.Drop2.grid(row=12, sticky=W)
+
+        self.calcButton2 = Button(master, text="Calculate", width=20, command=self.norm)  # Calculate Button
+        self.calcButton2.grid(row=12, column=3, columnspan=2)
 
         # GUI size
         frame = Frame(master)
@@ -191,6 +199,11 @@ class GUI:
         Isen.msg = msg
         Isen.set_error()
 
+    def norm(norm):
+        # z = Isen.variable1.get()
+        # n = float(Isen.entry_3.get())
+        # g = float(Isen.entry_2.get())
+        main()  # z, n, g
 
 root = Tk()
 b = GUI(root)

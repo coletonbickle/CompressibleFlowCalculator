@@ -31,7 +31,7 @@ def main():
         i = z == a or z == b or z == c or z == e or z == f or z == h  # or z == d
         j = g > 1
         if i and j:
-            fcn(z, n, g)
+            fcn_normal(z, n, g)
             k = 0
             if _Normal.m1 is not None:
                 print(f"\nM1: {_Normal.m1:8.8f} M2: {_Normal.m2:8.8f} p02/01: {_Normal.p02p01:8.8f}")
@@ -44,7 +44,7 @@ def main():
             print("\nError: Please input a valid input\n")
 
 
-def fcn(z, n, g):
+def fcn_normal(z, n, g):
     # Find out how to Calculate p1/p02
 
     # This Function includes all possible outcomes given possible inputs.
