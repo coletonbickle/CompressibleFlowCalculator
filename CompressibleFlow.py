@@ -141,7 +141,7 @@ class GUI:
 
         self.normErrorMsg = Label(master, text="Error: ").grid(row=15, sticky=E)
         self.normMsg = StringVar()
-        self.NormError = Entry(master, textvariable=self.msg, width=57)
+        self.NormError = Entry(master, textvariable=self.normMsg, width=57)
         self.NormError.grid(row=15, column=1, columnspan=5, sticky=W)
         self.NormError.configure(state="readonly")
         #
@@ -209,6 +209,20 @@ class GUI:
         clear.isen_j.configure(state=NORMAL)
         clear.isen_j.delete(0, END)
 
+    def clear_norm(clear):
+        clear.norm_a.configure(state=NORMAL)
+        clear.norm_a.delete(0, END)
+        clear.norm_b.configure(state=NORMAL)
+        clear.norm_b.delete(0, END)
+        clear.norm_c.configure(state=NORMAL)
+        clear.norm_c.delete(0, END)
+        clear.norm_d.configure(state=NORMAL)
+        clear.norm_d.delete(0, END)
+        clear.norm_e.configure(state=NORMAL)
+        clear.norm_e.delete(0, END)
+        clear.norm_f.configure(state=NORMAL)
+        clear.norm_f.delete(0, END)
+
     def read_isen(self):
         self.isen_a.configure(state="readonly")
         self.isen_b.configure(state="readonly")
@@ -220,6 +234,14 @@ class GUI:
         self.isen_h.configure(state="readonly")
         self.isen_i.configure(state="readonly")
         self.isen_j.configure(state="readonly")
+
+    def read_norm(self):
+        self.norm_a.configure(state="readonly")
+        self.norm_b.configure(state="readonly")
+        self.norm_c.configure(state="readonly")
+        self.norm_d.configure(state="readonly")
+        self.norm_e.configure(state="readonly")
+        self.norm_f.configure(state="readonly")
 
     def set_error(self):
         self.error.configure(state=NORMAL)
@@ -251,8 +273,18 @@ class GUI:
         z = self.variable2.get()
         n = float(self.entry_3norm.get())
         g = float(self.entry_2norm.get())
-        fcn_normal(z, n, g)  # Fix Error where fcn_normal()/main() cannot return class: _Normal
-
+        _Normal = fcn_normal(z, n, g)  # Fix Error where fcn_normal()/main() cannot return class: _Normal
+        self.clear_norm()
+        # print(f"Output {_Normal.set()}")
+        # self.norm_a.insert(0, f"{_Normal:.5f}")
+        # self.norm_b.insert(0, f"{_Normal.m2:.5f}")
+        # self.norm_c.insert(0, f"{_Normal.p02p01:.5f}")
+        # self.norm_d.insert(0, f"{_Normal.p1p02:.5f}")
+        # self.norm_e.insert(0, f"{_Normal.p2p1:.5f}")
+        # self.norm_f.insert(0, f"{_Normal.t2t1:.5f}")
+        self.read_norm()
+        # self.normMsg = _Normal.msg
+        self.set_error()
 
 root = Tk()
 b = GUI(root)

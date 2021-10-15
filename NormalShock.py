@@ -12,6 +12,16 @@ class _Normal:
         self.t2t1 = x
         self.msg = "None: All Values Converged"
 
+    # def set(self, _Normal):
+    #     self.m1 = _Normal.m1
+    #     self.m2 = _Normal.m2
+    #     self.p02p01 = _Normal.p02p01
+    #     self.p1p02 = _Normal.p1p02
+    #     self.p2p1 = _Normal.p2p1
+    #     self.r2r1 = _Normal.r2r1
+    #     self.t2t1 = _Normal.t2t1
+    #     self.msg = _Normal.msg
+
 
 def main():
     a = "m1"
@@ -172,6 +182,7 @@ def fcn_normal(z, n, g):
         else:
             _error()
             _Normal.msg = "T2/T1 Must be Between 1 and 1000000000"
+    return _Normal
     # notation()
 
 
