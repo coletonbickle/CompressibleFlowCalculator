@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Working on GUI to include Normal Shock Relations">
+    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Updated GUI to include the Output boxes for all outputs relevent to Normal Shock Relations. Still in the process of attaching NormalShock file to output the proper values to the main GUI file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompressibleFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompressibleFlow.py" afterDir="false" />
     </list>
@@ -236,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633536929450</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated GUI to include the Output boxes for all outputs relevent to Normal Shock Relations. Still in the process of attaching NormalShock file to output the proper values to the main GUI file.">
+      <created>1633709975282</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1633709975282</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +264,7 @@
     <MESSAGE value="I further optimized backwards calculations. Now calculates all backward calculates to the correct values in a faster time interval as well as in less lines of code." />
     <MESSAGE value="Changing Local File Location" />
     <MESSAGE value="Working on GUI to include Normal Shock Relations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on GUI to include Normal Shock Relations" />
+    <MESSAGE value="Updated GUI to include the Output boxes for all outputs relevent to Normal Shock Relations. Still in the process of attaching NormalShock file to output the proper values to the main GUI file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated GUI to include the Output boxes for all outputs relevent to Normal Shock Relations. Still in the process of attaching NormalShock file to output the proper values to the main GUI file." />
   </component>
 </project>

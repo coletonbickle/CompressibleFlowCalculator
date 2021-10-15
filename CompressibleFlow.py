@@ -183,12 +183,11 @@ class GUI:
         self.norm_f.grid(row=14, column=5)
         self.norm_f.configure(state="readonly")
 
-
-        # GUI size
+        # GUI Frame size
         frame = Frame(master)
         frame.grid()
 
-    def clear_text(clear):
+    def clear_isen(clear):
         clear.isen_a.configure(state=NORMAL)
         clear.isen_a.delete(0, END)
         clear.isen_b.configure(state=NORMAL)
@@ -210,6 +209,18 @@ class GUI:
         clear.isen_j.configure(state=NORMAL)
         clear.isen_j.delete(0, END)
 
+    def read_isen(self):
+        self.isen_a.configure(state="readonly")
+        self.isen_b.configure(state="readonly")
+        self.isen_c.configure(state="readonly")
+        self.isen_d.configure(state="readonly")
+        self.isen_e.configure(state="readonly")
+        self.isen_f.configure(state="readonly")
+        self.isen_g.configure(state="readonly")
+        self.isen_h.configure(state="readonly")
+        self.isen_i.configure(state="readonly")
+        self.isen_j.configure(state="readonly")
+
     def set_error(self):
         self.error.configure(state=NORMAL)
         self.error.delete(0, END)
@@ -221,27 +232,18 @@ class GUI:
         n = float(self.entry_3.get())
         g = float(self.entry_2.get())
         x, msg = fcn_comp(z, n, g)
-        self.clear_text()
+        self.clear_isen()
         self.isen_a.insert(0, f"{x[0]:.5f}")
-        self.isen_a.configure(state="readonly")
         self.isen_b.insert(0, f"{x[1]:.5f}")
-        self.isen_b.configure(state="readonly")
         self.isen_c.insert(0, f"{x[2]:.5f}")
-        self.isen_c.configure(state="readonly")
         self.isen_d.insert(0, f"{x[3]:.5f}")
-        self.isen_d.configure(state="readonly")
         self.isen_e.insert(0, f"{x[4]:.5f}")
-        self.isen_e.configure(state="readonly")
         self.isen_f.insert(0, f"{x[5]:.5f}")
-        self.isen_f.configure(state="readonly")
         self.isen_g.insert(0, f"{x[6]:.5f}")
-        self.isen_g.configure(state="readonly")
         self.isen_h.insert(0, f"{x[7]:.5f}")
-        self.isen_h.configure(state="readonly")
         self.isen_i.insert(0, f"{x[8]:.5f}")
-        self.isen_i.configure(state="readonly")
         self.isen_j.insert(0, f"{x[9]:.5f}")
-        self.isen_j.configure(state="readonly")
+        self.read_isen()
         self.msg = msg
         self.set_error()
 
