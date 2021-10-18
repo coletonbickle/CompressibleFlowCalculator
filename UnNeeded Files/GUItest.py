@@ -3,7 +3,7 @@ from tkinter import *
 
 class X:
 
-    def __init__(self, master):
+    def __init__(, master):
         self.label_1 = Label(master, text="Isentropic Flow Relations")  # Adds Labels
         self.label_2 = Label(master, text="Perfect Gas, Gamma")
         self.entry_2 = Entry(master)  # Adds Available entry spot

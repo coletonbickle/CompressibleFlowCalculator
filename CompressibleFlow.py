@@ -165,23 +165,29 @@ class GUI:
         self.norm_c.grid(row=13, column=5)
         self.norm_c.configure(state="readonly")
 
+        self.p2p1label = Label(master, text="p1/p02: ")  # p1/p02
+        self.p2p1label.grid(row=13, column=6, sticky=E)
+        self.norm_d = Entry(master)
+        self.norm_d.grid(row=13, column=7)
+        self.norm_d.configure(state="readonly")
+
         self.p2p1label = Label(master, text="p2/p1: ")  # p2/p1
         self.p2p1label.grid(row=14, column=0, sticky=E)
-        self.norm_d = Entry(master)
-        self.norm_d.grid(row=14, column=1)
-        self.norm_d.configure(state="readonly")
+        self.norm_e = Entry(master)
+        self.norm_e.grid(row=14, column=1)
+        self.norm_e.configure(state="readonly")
 
         self.r2r1label = Label(master, text="rho2/rho1: ")  # rho2/rho1
         self.r2r1label.grid(row=14, column=2, sticky=E)
-        self.norm_e = Entry(master)
-        self.norm_e.grid(row=14, column=3)
-        self.norm_e.configure(state="readonly")
+        self.norm_f = Entry(master)
+        self.norm_f.grid(row=14, column=3)
+        self.norm_f.configure(state="readonly")
 
         self.t2t1label = Label(master, text="T2/T1: ")  # T2/T1
         self.t2t1label.grid(row=14, column=4, sticky=E)
-        self.norm_f = Entry(master)
-        self.norm_f.grid(row=14, column=5)
-        self.norm_f.configure(state="readonly")
+        self.norm_g = Entry(master)
+        self.norm_g.grid(row=14, column=5)
+        self.norm_g.configure(state="readonly")
 
         # GUI Frame size
         frame = Frame(master)
@@ -222,6 +228,8 @@ class GUI:
         clear.norm_e.delete(0, END)
         clear.norm_f.configure(state=NORMAL)
         clear.norm_f.delete(0, END)
+        clear.norm_g.configure(state=NORMAL)
+        clear.norm_g.delete(0, END)
 
     def read_isen(self):
         self.isen_a.configure(state="readonly")
@@ -242,12 +250,19 @@ class GUI:
         self.norm_d.configure(state="readonly")
         self.norm_e.configure(state="readonly")
         self.norm_f.configure(state="readonly")
+        self.norm_g.configure(state="readonly")
 
-    def set_error(self):
+    def set_error_isen(self):
         self.error.configure(state=NORMAL)
         self.error.delete(0, END)
         self.error.insert(0, self.msg)
         self.error.configure(state="readonly")
+
+    def set_error_norm(self):
+        self.NormError.configure(state=NORMAL)
+        self.NormError.delete(0, END)
+        self.NormError.insert(0, self.normMsg)
+        self.NormError.configure(state="readonly")
 
     def isen(self):
         z = self.variable1.get()
@@ -267,24 +282,35 @@ class GUI:
         self.isen_j.insert(0, f"{x[9]:.5f}")
         self.read_isen()
         self.msg = msg
-        self.set_error()
+        self.set_error_isen()
 
     def norm(self):
         z = self.variable2.get()
         n = float(self.entry_3norm.get())
         g = float(self.entry_2norm.get())
-        _Normal = fcn_normal(z, n, g)  # Fix Error where fcn_normal()/main() cannot return class: _Normal
+        N = _Normal(z, n, g)
+        N.fcn_normal()
         self.clear_norm()
-        # print(f"Output {_Normal.set()}")
-        # self.norm_a.insert(0, f"{_Normal:.5f}")
-        # self.norm_b.insert(0, f"{_Normal.m2:.5f}")
-        # self.norm_c.insert(0, f"{_Normal.p02p01:.5f}")
-        # self.norm_d.insert(0, f"{_Normal.p1p02:.5f}")
-        # self.norm_e.insert(0, f"{_Normal.p2p1:.5f}")
-        # self.norm_f.insert(0, f"{_Normal.t2t1:.5f}")
+        if N.m1 is not None:
+            self.norm_a.insert(0, f"{N.m1:.5f}")
+            self.norm_b.insert(0, f"{N.m2:.5f}")
+            self.norm_c.insert(0, f"{N.p02p01:.5f}")
+            # self.norm_d.insert(0, f"{N.p1p02:.5f}")
+            self.norm_e.insert(0, f"{N.p2p1:.5f}")
+            self.norm_f.insert(0, f"{N.r2r1:.5f}")
+            self.norm_g.insert(0, f"{N.t2t1:.5f}")
+        else:
+            self.norm_a.insert(0, f"{N.m1}")
+            self.norm_b.insert(0, f"{N.m2}")
+            self.norm_c.insert(0, f"{N.p02p01}")
+            # self.norm_d.insert(0, f"{N.p1p02}")
+            self.norm_e.insert(0, f"{N.p2p1}")
+            self.norm_f.insert(0, f"{N.r2r1}")
+            self.norm_g.insert(0, f"{N.t2t1}")
         self.read_norm()
-        # self.normMsg = _Normal.msg
-        self.set_error()
+        self.normMsg = N.msg
+        self.set_error_norm()
+
 
 root = Tk()
 b = GUI(root)
