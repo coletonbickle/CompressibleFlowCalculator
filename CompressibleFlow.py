@@ -1,6 +1,5 @@
 from tkinter import *
 from Isentropic import *
-from NormalShock import *
 from NormalShock import _Normal
 
 
