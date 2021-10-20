@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Small Update">
+    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Just deleted on uneeded line">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompressibleFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompressibleFlow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Isentropic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Isentropic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NormalShock.py" beforeDir="false" afterPath="$PROJECT_DIR$/NormalShock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnNeeded Files/GUItest.py" beforeDir="false" afterPath="$PROJECT_DIR$/UnNeeded Files/GUItest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +266,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634324303121</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed issue where the main GUI code could not properly obtain the _Normal Class attributes. Now all but 1 outputs in Class _Normal is properly printing to GUI.">
+      <created>1634573479870</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1634573479870</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Just deleted on uneeded line">
+      <created>1634573610894</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1634573610894</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,6 +303,8 @@
     <MESSAGE value="Working on GUI to include Normal Shock Relations" />
     <MESSAGE value="Updated GUI to include the Output boxes for all outputs relevent to Normal Shock Relations. Still in the process of attaching NormalShock file to output the proper values to the main GUI file." />
     <MESSAGE value="Small Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Update" />
+    <MESSAGE value="Fixed issue where the main GUI code could not properly obtain the _Normal Class attributes. Now all but 1 outputs in Class _Normal is properly printing to GUI." />
+    <MESSAGE value="Just deleted on uneeded line" />
+    <option name="LAST_COMMIT_MESSAGE" value="Just deleted on uneeded line" />
   </component>
 </project>

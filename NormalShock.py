@@ -32,6 +32,7 @@ class _Normal:
             self.p02p01 = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                         ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
             self.r2r1 = ((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)
+            self.p1p02 = (1 + (g-1)/2*m**2)**(-g/(g-1))/self.p02p01
 
         elif z == 'm2':
             self.m2 = n
@@ -53,6 +54,7 @@ class _Normal:
                 self.p02p01 = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                             ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
                 self.r2r1 = ((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)
+                self.p1p02 = (1 + (g - 1) / 2 * m ** 2) ** (-g / (g - 1)) / self.p02p01
             else:
                 self._error()
                 self.msg = 'M2 Must be Between 0.377964474 and 1'
@@ -77,6 +79,7 @@ class _Normal:
                 self.p02p01 = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                             ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
                 self.r2r1 = ((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)
+                self.p1p02 = (1 + (g - 1) / 2 * m ** 2) ** (-g / (g - 1)) / self.p02p01
             else:
                 self._error()
                 self.msg = "p2/p1 Must be Between 1 and 10000000000"
@@ -101,6 +104,7 @@ class _Normal:
                 self.p2p1 = (2 * g * m ** 2 - (g - 1)) / (g + 1)
                 self.t2t1 = (2 * g * m ** 2 - (g - 1)) * ((g - 1) * m ** 2 + 2) / ((g + 1) ** 2 * m ** 2)
                 self.r2r1 = ((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)
+                self.p1p02 = (1 + (g - 1) / 2 * m ** 2) ** (-g / (g - 1)) / self.p02p01
             else:
                 self._error()
                 self.msg = "p02/p01 Must be Between 0 and 1"
@@ -125,6 +129,7 @@ class _Normal:
                 self.t2t1 = (2 * g * m ** 2 - (g - 1)) * ((g - 1) * m ** 2 + 2) / ((g + 1) ** 2 * m ** 2)
                 self.p02p01 = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                             ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
+                self.p1p02 = (1 + (g - 1) / 2 * m ** 2) ** (-g / (g - 1)) / self.p02p01
             else:
                 self._error()
                 self.msg = "rho2/rho1 Must be Between 1 and 6"
@@ -149,6 +154,7 @@ class _Normal:
                 self.p02p01 = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                             ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
                 self.r2r1 = ((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)
+                self.p1p02 = (1 + (g - 1) / 2 * m ** 2) ** (-g / (g - 1)) / self.p02p01
             else:
                 self._error()
                 self.msg = "T2/T1 Must be Between 1 and 1000000000"
@@ -162,16 +168,6 @@ class _Normal:
         self.p2p1 = None
         self.r2r1 = None
         self.t2t1 = None
-
-    # def set(self, _Normal):
-    #     self.m1 = _Normal.m1
-    #     self.m2 = _Normal.m2
-    #     self.p02p01 = _Normal.p02p01
-    #     self.p1p02 = _Normal.p1p02
-    #     self.p2p1 = _Normal.p2p1
-    #     self.r2r1 = _Normal.r2r1
-    #     self.t2t1 = _Normal.t2t1
-    #     self.msg = _Normal.msg
 
 
 # def main():
@@ -334,36 +330,7 @@ class _Normal:
 #             _error()
 #             _Normal.msg = "T2/T1 Must be Between 1 and 1000000000"
 #     return self
-    # notation()
 
-
-# def notation():
-#     a = "m1"
-#     b = "m2"
-#     c = "p02/p01"
-#     d = "p1/p02"
-#     e = "p2/p1"
-#     f = "rho2/rho1"
-#     h = "t2/t1"
-#     _aprn = "{.8f}".format(_Normal.m1)
-#     _bprn = "{.8f}".format(_Normal.m2)
-#     _cprn = "{.8f}".format(_Normal.p02p01)
-#     _eprn = "{.8f}".format(_Normal.p2p1)
-#     _fprn = "{.8f}".format(_Normal.r2r1)
-#     _hprn = "{.8f}".format(_Normal.t2t1)
-#
-#     if _Normal.m1 >= 1e6:
-#         _aprn = "{:5e}".format(_Normal.m1)
-#     if _Normal.m2 >= 1e6:
-#         _bprn = "{:5e}".format(_Normal.m2)
-#     if _Normal.p02p01 >= 1e6:
-#         _cprn = "{:5e}".format(_Normal.p02p01)
-#     if _Normal.p2p1 >= 1e6:
-#         _eprn = "{:5e}".format(_Normal.p2p1)
-#     if _Normal.r2r1 >= 1e6:
-#         _fprn = "{:5e}".format(_Normal.r2r1)
-#     if _Normal.t2t1 >= 1e6:
-#         _hprn = "{:5e}".format(_Normal.t2t1)
 
 # def _error():
 #     self.m1 = None

@@ -37,7 +37,6 @@ def fcn_comp(z, n, g):
                 x[i] = None
 
             msg = "T/T0 Must be Between 0 and 1"
-            # print(msg)
             return x, msg
 
         if z != MA and m >= 1:
@@ -102,7 +101,7 @@ def fcn_comp(z, n, g):
         p_mang = n
         m = 1
         if 0 < p_mang < 130.454076:  # 130.454076
-            increment = 10000
+            increment = 10000000
             while m > 0:
                 temp1 = math.sqrt((g + 1) / (g - 1)) * math.degrees(
                     math.atan(math.sqrt((g - 1) / (g + 1) * (m ** 2 - 1))))
