@@ -18,10 +18,20 @@ class _Normal:
     def fcn_normal(self):
         # This Function includes all possible outcomes given possible inputs.
         # Multiple while-loops that optimize backward calculation time to calculate M1 for each input (excluding M1)
+        if self.g <= 1:
+            self.msg = "Gamma Must be Greater than 1"
+            self._error()
+            return
+
         g = self.g
         n = self.n
         z = self.z.lower()
         if z == 'm1':
+            if self.n <= 1:
+                self._error()
+                self.msg = "M1 Must be Greater than 1"
+                return
+
             m = self.n
             self.m1 = self.n
             self.m2 = math.sqrt(((g - 1) * m ** 2 + 2) / ((2 * g * m ** 2) - (g - 1)))
@@ -37,7 +47,7 @@ class _Normal:
             m = 1
             increment = 100
             if 0.3779644739999999 < n < 1:
-                while m > 0:  # Optimized while-loop to Calculate M1
+                while True:  # Optimized while-loop to Calculate M1
                     temp = math.sqrt(((g - 1) * m ** 2 + 2) / ((2 * g * m ** 2) - (g - 1)))
                     if temp <= n:
                         m = m - increment
@@ -62,7 +72,7 @@ class _Normal:
             m = 1
             increment = 100
             if n <= 10000000000:
-                while m > 0:  # Optimized while-loop to Calculate M1
+                while True:  # Optimized while-loop to Calculate M1
                     temp = (2 * g * m ** 2 - (g - 1)) / (g + 1)
                     if temp >= n:
                         m = m - increment
@@ -87,7 +97,7 @@ class _Normal:
             m = 1
             increment = 10
             if 0 < n < 1:
-                while m > 0:  # Optimized while-loop to Calculate M1
+                while True:  # Optimized while-loop to Calculate M1
                     temp = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                                 ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
                     if temp <= n:
@@ -112,7 +122,7 @@ class _Normal:
             m = 1
             increment = 10000
             if 0 < n < 0.52828178:
-                while m > 0: # Optimized while-loop to Calculate M1
+                while True:  # Optimized while-loop to Calculate M1
                     temp1 = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                                              ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
                     temp = (1 + (g - 1) / 2 * m ** 2) ** (-g / (g - 1)) / temp1
@@ -139,7 +149,7 @@ class _Normal:
             m = 1
             increment = 100000
             if 1 <= n <= 6:
-                while m > 0:  # Optimized while-loop to Calculate M1
+                while True:  # Optimized while-loop to Calculate M1
                     temp = ((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)
                     if temp >= n:
                         m = m - increment
@@ -164,7 +174,7 @@ class _Normal:
             m = 1
             increment = 1000
             if 1 <= n <= 1000000000:
-                while m > 0:  # Optimized while-loop to Calculate M1
+                while True:  # Optimized while-loop to Calculate M1
                     temp = (2 * g * m ** 2 - (g - 1)) * ((g - 1) * m ** 2 + 2) / ((g + 1) ** 2 * m ** 2)
                     if temp >= n:
                         m = m - increment
