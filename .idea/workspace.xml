@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Just deleted on uneeded line">
+    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompressibleFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompressibleFlow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Isentropic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Isentropic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NormalShock.py" beforeDir="false" afterPath="$PROJECT_DIR$/NormalShock.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -280,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634573610894</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values">
+      <created>1634745061078</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634745061078</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -305,6 +310,7 @@
     <MESSAGE value="Small Update" />
     <MESSAGE value="Fixed issue where the main GUI code could not properly obtain the _Normal Class attributes. Now all but 1 outputs in Class _Normal is properly printing to GUI." />
     <MESSAGE value="Just deleted on uneeded line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Just deleted on uneeded line" />
+    <MESSAGE value="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values" />
   </component>
 </project>
