@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="GUI can now accept input from p1/p02 values and properly and accurately display them on the GUI">
-      <change afterPath="$PROJECT_DIR$/Temp.py" afterDir="false" />
+    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NormalShock.py" beforeDir="false" afterPath="$PROJECT_DIR$/NormalShock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Temp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,7 +32,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.CompressibleFlow">
+  <component name="RunManager" selected="Python.Temp">
     <configuration name="CompressibleFlow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CompressibleFlow" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -48,9 +40,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\ccbic\PycharmProjects\CompressibleFlow\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CompressibleFlow.py" />
@@ -75,6 +67,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NormalShock.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Temp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CompressibleFlow" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\ccbic\PycharmProjects\CompressibleFlow\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Temp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -181,6 +194,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Temp" />
         <item itemvalue="Python.CompressibleFlow" />
         <item itemvalue="Python.NormalShock" />
       </list>
@@ -293,21 +307,7 @@
       <option name="project" value="LOCAL" />
       <updated>1634745061078</updated>
     </task>
-    <task id="LOCAL-00015" summary="GUI can now accept input from p1/p02 values and properly and accurately display them on the GUI">
-      <created>1634918889910</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1634918889911</updated>
-    </task>
-    <task id="LOCAL-00016" summary="GUI can now accept input from p1/p02 values and properly and accurately display them on the GUI">
-      <created>1634918935470</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1634918935470</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -333,7 +333,6 @@
     <MESSAGE value="Fixed issue where the main GUI code could not properly obtain the _Normal Class attributes. Now all but 1 outputs in Class _Normal is properly printing to GUI." />
     <MESSAGE value="Just deleted on uneeded line" />
     <MESSAGE value="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values" />
-    <MESSAGE value="GUI can now accept input from p1/p02 values and properly and accurately display them on the GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI can now accept input from p1/p02 values and properly and accurately display them on the GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values" />
   </component>
 </project>
