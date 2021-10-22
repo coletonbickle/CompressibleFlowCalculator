@@ -16,8 +16,6 @@ class _Normal:
         self.msg = "None: All Values Converged"
 
     def fcn_normal(self):
-        # Find out how to Calculate p1/p02
-
         # This Function includes all possible outcomes given possible inputs.
         # Multiple while-loops that optimize backward calculation time to calculate M1 for each input (excluding M1)
         g = self.g
@@ -114,7 +112,7 @@ class _Normal:
             m = 1
             increment = 10000
             if 0 < n < 0.52828178:
-                while m > 0:
+                while m > 0: # Optimized while-loop to Calculate M1
                     temp1 = ((((g + 1) * m ** 2) / ((g - 1) * m ** 2 + 2)) ** (g / (g - 1))) * (
                                              ((g + 1) / (2 * g * m ** 2 - (g - 1))) ** (1 / (g - 1)))
                     temp = (1 + (g - 1) / 2 * m ** 2) ** (-g / (g - 1)) / temp1
