@@ -1,5 +1,6 @@
 from tkinter import *
 from Isentropic import *
+from Isentropic import _Comp
 from NormalShock import _Normal
 
 
@@ -267,20 +268,37 @@ class GUI:
         z = self.variable1.get()
         n = float(self.entry_3.get())
         g = float(self.entry_2.get())
-        x, msg = fcn_comp(z, n, g)
+        I = _Comp(z, n, g)
+        I.fcn_comp()
         self.clear_isen()
-        self.isen_a.insert(0, f"{x[0]:.5f}")
-        self.isen_b.insert(0, f"{x[1]:.5f}")
-        self.isen_c.insert(0, f"{x[2]:.5f}")
-        self.isen_d.insert(0, f"{x[3]:.5f}")
-        self.isen_e.insert(0, f"{x[4]:.5f}")
-        self.isen_f.insert(0, f"{x[5]:.5f}")
-        self.isen_g.insert(0, f"{x[6]:.5f}")
-        self.isen_h.insert(0, f"{x[7]:.5f}")
-        self.isen_i.insert(0, f"{x[8]:.5f}")
-        self.isen_j.insert(0, f"{x[9]:.5f}")
+        if I.mch is not None:
+            self.isen_a.insert(0, f"{I.mch:.5f}")
+            if I.ma is None:
+                self.isen_b.insert(0, f"{I.ma}")
+                self.isen_c.insert(0, f"{I.pma}")
+            else:
+                self.isen_b.insert(0, f"{I.ma:.5f}")
+                self.isen_c.insert(0, f"{I.pma:.5f}")
+            self.isen_d.insert(0, f"{I.pp0:.5f}")
+            self.isen_e.insert(0, f"{I.rr0:.5f}")
+            self.isen_f.insert(0, f"{I.tt0:.5f}")
+            self.isen_g.insert(0, f"{I.ppst:.5f}")
+            self.isen_h.insert(0, f"{I.rrst:.5f}")
+            self.isen_i.insert(0, f"{I.ttst:.5f}")
+            self.isen_j.insert(0, f"{I.aast:.5f}")
+        else:
+            self.isen_a.insert(0, f"{I.mch}")
+            self.isen_b.insert(0, f"{I.ma}")
+            self.isen_c.insert(0, f"{I.pma}")
+            self.isen_d.insert(0, f"{I.pp0}")
+            self.isen_e.insert(0, f"{I.rr0}")
+            self.isen_f.insert(0, f"{I.tt0}")
+            self.isen_g.insert(0, f"{I.ppst}")
+            self.isen_h.insert(0, f"{I.rrst}")
+            self.isen_i.insert(0, f"{I.ttst}")
+            self.isen_j.insert(0, f"{I.aast}")
         self.read_isen()
-        self.msg = msg
+        self.msg = I.msg
         self.set_error_isen()
 
     def norm(self):

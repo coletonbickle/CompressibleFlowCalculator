@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values">
+    <list default="true" id="edd1711d-6237-4456-a33f-62fa64a4e89c" name="Changes" comment="Converting Isentropic into a class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Temp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompressibleFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompressibleFlow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Isentropic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Isentropic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +33,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Temp">
+  <component name="RunManager" selected="Python.CompressibleFlow">
     <configuration name="CompressibleFlow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CompressibleFlow" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,8 +195,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Temp" />
         <item itemvalue="Python.CompressibleFlow" />
+        <item itemvalue="Python.Temp" />
         <item itemvalue="Python.NormalShock" />
       </list>
     </recent_temporary>
@@ -307,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634745061078</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Converting Isentropic into a class">
+      <created>1634934689159</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634934689159</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -333,6 +341,7 @@
     <MESSAGE value="Fixed issue where the main GUI code could not properly obtain the _Normal Class attributes. Now all but 1 outputs in Class _Normal is properly printing to GUI." />
     <MESSAGE value="Just deleted on uneeded line" />
     <MESSAGE value="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Calculations so GUI can output p1/p02 for Normal Shock Relations. Still need to allow GUI to accept input from p1/p02 values" />
+    <MESSAGE value="Converting Isentropic into a class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Converting Isentropic into a class" />
   </component>
 </project>
